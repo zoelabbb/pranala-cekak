@@ -1,9 +1,9 @@
 </head> 
-      <script src="{{ asset('js/app.js') }}" defer></script>
-      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+      <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
+      <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ asset('apps/app.css') }}" rel="stylesheet">
  </head>
  <body>
-AAAAAAAAAAAA
  <div class="card">
         <div class="card-body">
             <div class="mb-3">
