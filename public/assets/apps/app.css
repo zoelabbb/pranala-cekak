@@ -20,6 +20,7 @@ body .app-main {
         text-align: center;
   }
 }
+
 @media screen and (min-width: 300px) and (max-width: 600px) {
     div.app-logo {
         height: auto;
@@ -31,7 +32,7 @@ body .app-main {
         font-size: 5vw;
         text-align: center;
   }
-  }
+}
 
 .app-logo {
     height: auto;
@@ -84,3 +85,4 @@ body .app-main {
 .app-footer a:hover {
     color: #ff8116;
     text-decoration: underline;
+}
