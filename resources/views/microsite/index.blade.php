@@ -2,7 +2,7 @@
 
 @section('content')
     <h4 class="app-h4">{{$welcomeText}}</h4>
-    <a href="https://radnet-digital.id"><button class="btn btn-primary app-btn">Web Site</button></a>
+    <a href="https://radnet-digital.id"><button class="btn btn-primary app-btn mt-3">Web Site</button></a>
     <a href="mailto:wecare@radnet-digital.id"><button class="btn btn-primary app-btn">Email</button></a>
     <button class="btn btn-primary app-btn">Facebook</button>
     <button class="btn btn-primary app-btn">Instagram</button>

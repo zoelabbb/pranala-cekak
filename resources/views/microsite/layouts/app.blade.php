@@ -21,7 +21,7 @@
 <body>
 <div class="app-main d-flex flex-column min-vh-100 justify-content-center align-items-center">
     <div class="app-logo">
-        <img src="{{ asset('images/logo.png') }}" class="img-fluid">
+        <img src="{{ $logo }}" class="img-fluid">
     </div>
     @yield('content')
 </div>
