@@ -1,0 +1,14 @@
+[
+    { 
+        "users_id": "1",
+        "uri": "0",
+        "redirect": false,
+        "url": "dummy"
+    },
+    { 
+        "users_id": "1",
+        "uri": "rdi",
+        "redirect": true,
+        "url": "https://radnet-digital.id"
+    }
+]
