@@ -8,11 +8,35 @@ body .app-main {
     padding-right:5em;
 }
 
-.logo {
-    height: auto;
-    max-width: 25%;
+@media screen and (max-width: 300px) {
+    div.app-logo {
+        height: auto;
+        max-width: 100%;
+    }
+    h4.app-h4 {
+        font-family: "Noto Sans Display", "Arial", Tahoma, Verdana, sans-serif;
+        font-weight: 400;
+        font-size: 5vw;
+        text-align: center;
+  }
 }
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    div.app-logo {
+        height: auto;
+        max-width: 80%;
+    }
+    h4.app-h4 {
+        font-family: "Noto Sans Display", "Arial", Tahoma, Verdana, sans-serif;
+        font-weight: 400;
+        font-size: 5vw;
+        text-align: center;
+  }
+  }
 
+.app-logo {
+    height: auto;
+    max-width: 30%;
+}
 .app-h4 {
     font-family: "Noto Sans Display", "Arial", Tahoma, Verdana, sans-serif;
     font-weight: 400;
