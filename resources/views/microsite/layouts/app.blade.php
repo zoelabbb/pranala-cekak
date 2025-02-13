@@ -10,7 +10,9 @@
     <title>{{ config('app.name') }}</title>
 
     <link href="{{ asset('apps/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bootstrap-icons/font/css/bootstrap-icon.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,14 +21,16 @@
     <!-- Scripts -->
 </head>
 <body>
-<div class="app-main d-flex flex-column min-vh-100 justify-content-center align-items-center">
-    <div class="app-logo">
-        <img src="{{ $logo }}" class="img-fluid">
+    <div class="app-main d-flex flex-column min-vh-100 justify-content-center align-items-center">
+        <div class="app-logo">
+            <img src="{{ $logo }}" class="img-fluid">
+        </div>
+        @yield('content')
     </div>
-    @yield('content')
-</div>
-<div class="app-footer d-flex flex-column max-vh-20 justify-content-center align-items-center">
-    <em>brought to you by <a href="https://github.com/FIK-NAROTAMA/pranala-cekak">Pranala Cekak (<span class="noto-sans-javanese-condensed">ꦥꦿꦤꦭ &nbsp;ꦕꦼꦏꦏ꧀</span>)</a><em>
-</div>
+    <div class="footer">
+        <div class="app-footer d-flex flex-column max-vh-20 justify-content-center align-items-center">
+            <em>brought to you by <a href="https://github.com/FIK-NAROTAMA/pranala-cekak">Pranala Cekak (<span class="noto-sans-javanese-condensed">ꦥꦿꦤꦭ &nbsp;ꦕꦼꦏꦏ꧀</span>)</a><em>
+        </div>
+    </div>
 </body>
 </html>
