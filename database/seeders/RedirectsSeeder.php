@@ -21,8 +21,9 @@ class RedirectsSeeder extends Seeder
             Redirects::create([
                 'users_id' => $value->users_id,
                 'uri' => $value->uri,
+                'expired' => $value->expired ?? null,
                 'redirect' => $value->redirect,
-                'url' => $value->url
+                'url' => $value->url ?? null
             ]);
         }  
     }
