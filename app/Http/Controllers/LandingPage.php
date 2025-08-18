@@ -15,23 +15,35 @@ class LandingPage extends Controller
 
     public function index($uri=0)
     {
-        $goesTo = DB::table('redirects')
-                            ->where('active', true)
-                            ->where('uri', (string) $uri)
-                            ->first();
-        if ($goesTo == NULL)
+        if ($uri == 0)
         {
-            echo "404 Not Found";
-            exit;
+            $logo = asset('images/logo.png');
+            return view('landing_page/index', compact('logo'));
         }
 
+        $now = now();
+        $goesTo = DB::table('redirects')
+                    ->where('active', true)
+                    ->whereRaw('BINARY `uri` = ?', [(string) $uri])
+                    ->where(function ($query) use ($now) {
+                        $query->where('expired', '>', $now)
+                              ->orWhereNull('expired');
+                        })
+                    ->first();
+        if ($goesTo == null)
+        {
+            $logo = asset('images/404.png');
+            $welcomeText = Str::of("Selamat Datang di <em>Pranala-Cekak</em>")->toHtmlString();
+            return view('404/index', compact('logo', 'welcomeText'));
+        }
         if ($goesTo->redirect)
             return redirect()->away($goesTo->url);
         else
-        {
-            $logo = asset('images/logo.png');
-            $welcomeText = Str::of("Selamat Datang di <em>radneXt Shortener</em>")->toHtmlString();
-            return view('microsite/index', compact('logo', 'welcomeText'));
-        }
+            $this->microSite($goesTo->uri);
     }
+
+    private function microSite($microCode)
+    {
+        printf("Redirecting to microsite %s", $microCode);
+   }
 }

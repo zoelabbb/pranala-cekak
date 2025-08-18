@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        printf("Welcome to the admin dashboard.<br>");
+        exit(0);
+        // You can return a view or perform other actions here
         return view('home');
     }
 }
