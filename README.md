@@ -1,2 +1,1 @@
-# pranala-cekak
-## a private URL shortening
+# pranala-cekak, a private URL shortening
