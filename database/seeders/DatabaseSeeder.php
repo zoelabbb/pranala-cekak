@@ -10,7 +10,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UsersSeeder::class,
-            RedirectsSeeder::class
+            RedirectsSeeder::class,
+            MicrositesSeeder::class,
+            Microsites_contentsSeeder::class
         ]);
     }
 }
