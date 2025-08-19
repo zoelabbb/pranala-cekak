@@ -8,6 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }} - 404</title>
+    <meta property="og:title" content="{{ config('app.name') }} - 404" />
+    <meta property="og:description" content="URL tidak ditemukan atau sudah kadaluwarsa. Silakan dikonfirmasi pada pemberi URL ini." />
+    <meta property="og:type" content="a private URL shortener" />
+    <meta property="og:url" content="{{ $url }}" />
+    <meta property="og:image" content="{{ asset('images/logo.png') }}" />
 
     <link href="{{ asset('apps/app.css') }}" rel="stylesheet">
     <link href="{{ asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -25,11 +30,7 @@
     @yield('content')
     <nav class="fixed-bottom footer">
         <div class="app-footer d-flex flex-column max-vh-20 justify-content-center align-items-center">
-            <span>
-                <a href='https://github.com/FIK-NAROTAMA/pranala-cekak' target=_>Pranala-Cekak&reg;</a>,
-                a private URL shortener by <a href='https://fasilkom.narotama.ac.id' target=_>FIK</a> - 
-                <a href='https://narotama.ac.id' target=_>NAROTAMA</a>
-            </span>
+            <span>{{ Str::of(config('app.footer'))->toHtmlString() }}</span>
         </div>
     </nav>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

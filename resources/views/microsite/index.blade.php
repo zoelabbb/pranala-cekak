@@ -1,56 +1,31 @@
 @extends('microsite/layouts.app')
 
 @section('content')
-    <h4 class="app-h4">{{$welcomeText}}</h4>
-    <!--a href="https://radnet-digital.id"><button class="btn btn-primary app-btn mt-3">Web Site</button></a>
-    <a href="mailto:wecare@radnet-digital.id"><button class="btn btn-primary app-btn">Email</button></a>
-    <button class="btn btn-primary app-btn text-start">
-        <img src="{{ asset('images/favicon.png') }}" class="img-fluid" style="height:2.5em;width:auto;">
-        <span class="app-btn-txt ms-2">Facebook</span>
-    </button>
-    <button class="btn btn-primary app-btn">Instagram</button>
-    <button class="btn btn-primary app-btn">Tiktok</button>
-    <button class="btn btn-primary app-btn">Whatsapp</button>
-    <button class="btn btn-primary app-btn align-middle">               
-        <img  src="{{ asset('images/favicon.png') }}"/>
-        <span class="app-btn-txt ms-2">website</span>
-    </button-->
+    <div class="container mt-3">
+        <section id="hero" class="text-center mb-5">
+            <h1 class="ms-h1 mb-0">{{ $namaAcara }}</h1>
+            <h4 class="ms-h4">{{ $waktuAcara }} | {{ $lokasiAcara }}</h4>
+        </section>
+        <section id="registration-form" class=" mb-5 text-center">
+            <div class="d-grid gap-3 col-6 mx-auto">
 
-    <button class="btn btn-primary app2-btn text-center">
-        <div id="app2-btn_container">
-            <img  src="{{ asset('images/favicon.png') }}" class="img-fluid"/>
-            <span class="app2-btn-txt text-center">website</span>
-        </div>
-    </button>
-    <button class="btn btn-primary app2-btn">
-        <div id="app2-btn_container">
-            <img  src="{{ asset('images/favicon.png') }}" class="img-fluid"/>
-            <span class="app2-btn-txt">email</span>
-        </div>
-    </button>
-    <button class="btn btn-primary app2-btn">
-        <div id="app2-btn_container">
-            <img  src="{{ asset('images/favicon.png') }}" class="img-fluid"/>
-            <span class="app2-btn-txt">whatsapp</span>
-        </div>
-    </button>
-    <button class="btn btn-primary app2-btn">
-        <div id="app2-btn_container">
-            <img  src="{{ asset('images/favicon.png') }}" class="img-fluid"/>
-            <span class="app2-btn-txt">facebook</span>
-        </div>
-    </button>
-    <button class="btn btn-primary app2-btn">
-        <div id="app2-btn_container">
-            <img  src="{{ asset('images/favicon.png') }}" class="img-fluid"/>
-            <span class="app2-btn-txt">instagram</span>
-        </div>
-    </button>
-    <button class="btn btn-primary app2-btn">
-        <div id="app2-btn_container">
-            <img  src="{{ asset('images/favicon.png') }}" class="img-fluid"/>
-            <span class="app2-btn-txt">tiktok</span>
-        </div>
-    </button>
-
+                @foreach($links as $link)
+                    @php
+                        $status = FALSE;
+                        if (!$link->mulai && !$link->selesai)
+                            $status = TRUE;
+                        elseif (!$link->mulai && now() < $link->selesai)
+                            $status = TRUE;
+                        elseif ($link->mulai < now() && !$link->selesai)
+                            $status = TRUE;
+                        elseif ($link->mulai < now() && now() < $link->selesai)
+                            $status = TRUE;
+                    @endphp
+                    <a href="{{ ($status)? $link->url: $url }}" type="button" class="btn btn-lg {{ ($status)? '': 'disabled' }}
+                        {{ ($status)? 'btn-outline-primary': 'btn-outline-danger' }}"
+                        target=_>{{ $link->link_name }}</a>
+                @endforeach
+            </div>
+        </section>
+    </div>
 @endsection
