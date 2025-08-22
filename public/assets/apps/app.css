@@ -1,0 +1,123 @@
+body .app-main {
+    background-color: #ffffff;
+    color: aliceblue;
+    font-family: "Noto Sans Display", "Arial", Tahoma, Verdana, sans-serif;
+    font-weight: 200;
+    font-size: smaller;
+    padding-left:5em;
+    padding-right:5em;
+}
+
+@media screen and (max-width: 300px) {
+    div.app-logo {
+        height: auto;
+        max-width: 80%;
+    }
+    h4.app-h4 {
+        font-family: "Noto Sans Display", "Arial", Tahoma, Verdana, sans-serif;
+        font-weight: 400;
+        font-size: 5vw;
+        text-align: center;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    div.app-logo {
+        height: auto;
+        max-width: 70%;
+    }
+    h4.app-h4 {
+        font-family: "Noto Sans Display", "Arial", Tahoma, Verdana, sans-serif;
+        font-weight: 400;
+        font-size: 5vw;
+        text-align: center;
+  }
+}
+.app-logo {
+    width: 300px;
+    height: auto;
+    max-width: 80%;
+    max-height: 80%;
+}
+.app-404-logo {
+    width: 600px;
+    height: auto;
+    max-width: 80%;
+    max-height: 80%;
+}
+.app-h4 {
+    font-family: "Noto Sans Display", "Arial", Tahoma, Verdana, sans-serif;
+    font-weight: 600;
+    font-size:2vw;
+    text-align: center;
+}
+.noto-sans-javanese-condensed {
+    font-family: "Noto Sans Javanese", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+.app-footer {
+    background-color: #ffffff;
+    color: #555555;
+    font-family: "Barlow Condensed", "Noto Sans Display", "Arial", Tahoma, Verdana, sans-serif;
+    font-optical-sizing: auto;
+    font-style: oblique;
+    font-stretch: condensed ;
+    font-variation-settings:"wdth" 65;
+    font-size: 0.9em;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 1em;
+}
+.app-footer a {
+    color: #555555;
+    text-decoration: none;
+    font-weight: 600;
+}
+.app-footer a:hover {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 800;
+
+}
+.app2-btn {
+    min-width: 350px;
+    max-width: 450px;
+    padding: 5px;
+    text-align: center;
+    min-height: 3.5em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    position: relative;
+
+}
+#app2-btn_container img {
+    margin-right: 5px;    
+    vertical-align: middle;
+    height: 3em;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 2em;
+    transform: translate(-50%, -50%);
+}
+.app2-btn-txt {
+    vertical-align: middle;
+    font-size:1.5em;
+    text-transform:uppercase;
+    margin-left:0.5em;
+    text-align: center;
+}
+.ms-h1 {
+    font-family: "Barlow Condensed", "Noto Sans Display", "Arial", Tahoma, Verdana, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 2.5em;
+}
+.ms-h4 {
+    font-family: "Barlow Condensed", "Noto Sans Display", "Arial", Tahoma, Verdana, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1em;
+}
